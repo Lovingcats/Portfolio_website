@@ -53,6 +53,10 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   stylish_bottom_bar: ^0.1.5
   animations: ^2.0.7
+  web_smooth_scroll: ^1.1.0
+  animated_text_kit: ^4.2.2
+  sidebarx: ^0.14.0
+  collapsible_sidebar: ^2.0.3+2
 
 dev_dependencies:
   flutter_test:
