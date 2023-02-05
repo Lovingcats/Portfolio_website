@@ -3,7 +3,6 @@ import 'dart:math' as math show pi;
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 void main() => runApp(const MyApp());
 
@@ -37,7 +36,7 @@ class _SidebarPageState extends State<SidebarPage> {
   late String _headline;
   // ignore: prefer_final_fields
   AssetImage _avatarImg = const AssetImage('images/profile.png');
-
+  int index = 1;
   @override
   void initState() {
     super.initState();
@@ -48,9 +47,11 @@ class _SidebarPageState extends State<SidebarPage> {
   List<CollapsibleItem> get _generateItems {
     return [
       CollapsibleItem(
-        text: 'Dashboard',
-        icon: Icons.assessment,
-        onPressed: () => setState(() => _headline = 'DashBoard'),
+        text: 'Home',
+        icon: Icons.home,
+        onPressed: () => setState(() {
+          index = 1;
+        }),
         isSelected: true,
       ),
       CollapsibleItem(
@@ -116,54 +117,54 @@ class _SidebarPageState extends State<SidebarPage> {
         avatarImg: _avatarImg,
         title: 'Cho Yong Je',
         onTitleTap: () {
-          WebView(
-            initialUrl: '',
-          );
+          ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('안녕하세요! 신입 모바일 개발자 조용제입니다')));
         },
-        body: _body(size, context),
+        body: index == 1 ? _homebody(size, context) : _body(size, context),
         backgroundColor: Colors.black,
         selectedTextColor: Colors.limeAccent,
-        textStyle: TextStyle(fontSize: 15, fontStyle: FontStyle.italic),
-        titleStyle: TextStyle(
-            fontSize: 20,
-            fontStyle: FontStyle.italic,
-            fontWeight: FontWeight.bold),
-        toggleTitleStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        sidebarBoxShadow: [
-          BoxShadow(
-            color: Colors.indigo,
-            blurRadius: 20,
-            spreadRadius: 0.01,
-            offset: Offset(3, 3),
-          ),
-          BoxShadow(
-            color: Colors.green,
-            blurRadius: 50,
-            spreadRadius: 0.01,
-            offset: Offset(3, 3),
-          ),
-        ],
+        textStyle: const TextStyle(fontSize: 15),
+        titleStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        toggleTitleStyle:
+            const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       ),
     );
+  }
+
+  Widget _homebody(Size size, BuildContext context) {
+    return Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage('images/coding.jpg'), // 배경 이미지
+          ),
+          color: Colors.transparent,
+        ),
+        child: Center(
+          child: Column(
+            children: [
+              Text(
+                "hello",
+                style: TextStyle(fontSize: 10.sp, color: Colors.white),
+              )
+            ],
+          ),
+        ));
   }
 
   Widget _body(Size size, BuildContext context) {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: Colors.blueGrey[50],
+      color: Color.fromARGB(255, 255, 255, 255),
       child: Center(
-        child: Transform.rotate(
-          angle: math.pi / 2,
-          child: Transform.translate(
-            offset: Offset(-size.height * 0.3, -size.width * 0.23),
-            child: Text(
-              _headline,
-              style: Theme.of(context).textTheme.headline1,
-              overflow: TextOverflow.visible,
-              softWrap: false,
-            ),
-          ),
+        child: Text(
+          _headline,
+          style: Theme.of(context).textTheme.headline2,
+          overflow: TextOverflow.visible,
+          softWrap: false,
         ),
       ),
     );
