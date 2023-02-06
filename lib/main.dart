@@ -1,5 +1,6 @@
 import 'dart:math' as math show pi;
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -132,26 +133,59 @@ class _SidebarPageState extends State<SidebarPage> {
   }
 
   Widget _homebody(Size size, BuildContext context) {
-    return Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage('images/coding.jpg'), // 배경 이미지
+    return Stack(
+      children: [
+        Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage('images/coding.jpg'), // 배경 이미지
+            ),
           ),
-          color: Colors.transparent,
         ),
-        child: Center(
-          child: Column(
-            children: [
-              Text(
-                "hello",
-                style: TextStyle(fontSize: 10.sp, color: Colors.white),
-              )
-            ],
+        Positioned.fill(
+            child: Opacity(
+          opacity: 0.6,
+          child: Container(
+            color: const Color(0xFF000000),
           ),
-        ));
+        )),
+        Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 105.w, top: 315.h),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "CHO YONG JE",
+                    style: TextStyle(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              width: 250.0,
+              child: DefaultTextStyle(
+                style: TextStyle(fontSize: 15.sp, color: Colors.white),
+                child: AnimatedTextKit(
+                  repeatForever: true,
+                  animatedTexts: [
+                    TypewriterAnimatedText('',
+                        speed: const Duration(milliseconds: 800)),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      ],
+    );
   }
 
   Widget _body(Size size, BuildContext context) {
