@@ -55,54 +55,11 @@ class _SidebarPageState extends State<SidebarPage> {
         isSelected: true,
       ),
       CollapsibleItem(
-        text: 'Ice-Cream',
-        icon: Icons.icecream,
-        onPressed: () => setState(() => _headline = 'Errors'),
-      ),
-      CollapsibleItem(
-        text: 'Search',
-        icon: Icons.search,
-        onPressed: () => setState(() => _headline = 'Search'),
-      ),
-      CollapsibleItem(
-        text: 'Notifications',
-        icon: Icons.notifications,
-        onPressed: () => setState(() => _headline = 'Notifications'),
-      ),
-      CollapsibleItem(
-        text: 'Settings',
-        icon: Icons.settings,
-        onPressed: () => setState(() => _headline = 'Settings'),
-      ),
-      CollapsibleItem(
-        text: 'Home',
-        icon: Icons.home,
-        onPressed: () => setState(() => _headline = 'Home'),
-      ),
-      CollapsibleItem(
-        text: 'Alarm',
-        icon: Icons.access_alarm,
-        onPressed: () => setState(() => _headline = 'Alarm'),
-      ),
-      CollapsibleItem(
-        text: 'Eco',
-        icon: Icons.eco,
-        onPressed: () => setState(() => _headline = 'Eco'),
-      ),
-      CollapsibleItem(
-        text: 'Event',
-        icon: Icons.event,
-        onPressed: () => setState(() => _headline = 'Event'),
-      ),
-      CollapsibleItem(
-        text: 'Email',
-        icon: Icons.email,
-        onPressed: () => setState(() => _headline = 'Email'),
-      ),
-      CollapsibleItem(
-        text: 'Face',
-        icon: Icons.face,
-        onPressed: () => setState(() => _headline = 'Face'),
+        text: 'About',
+        icon: Icons.person_outline,
+        onPressed: () => setState(() {
+          index = 2;
+        }),
       ),
     ];
   }
@@ -120,7 +77,20 @@ class _SidebarPageState extends State<SidebarPage> {
           ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text('안녕하세요! 신입 모바일 개발자 조용제입니다')));
         },
-        body: index == 1 ? _homebody(size, context) : _body(size, context),
+        body: Stack(
+          children: [
+            AnimatedOpacity(
+              opacity: index == 1 ? 1 : 0,
+              duration: const Duration(milliseconds: 700),
+              child: _homebody(size, context),
+            ),
+            AnimatedOpacity(
+              opacity: index == 2 ? 1 : 0,
+              duration: const Duration(milliseconds: 700),
+              child: _aboutbody(size, context),
+            )
+          ],
+        ),
         backgroundColor: Colors.black,
         selectedTextColor: Colors.limeAccent,
         textStyle: const TextStyle(fontSize: 15),
@@ -194,6 +164,22 @@ class _SidebarPageState extends State<SidebarPage> {
           ],
         ),
       ],
+    );
+  }
+
+  Widget _aboutbody(Size size, BuildContext context) {
+    return Container(
+      height: double.infinity,
+      width: double.infinity,
+      color: const Color.fromARGB(255, 255, 255, 255),
+      child: Center(
+        child: Text(
+          _headline,
+          style: Theme.of(context).textTheme.headline2,
+          overflow: TextOverflow.visible,
+          softWrap: false,
+        ),
+      ),
     );
   }
 
