@@ -168,19 +168,29 @@ class _SidebarPageState extends State<SidebarPage> {
                 ],
               ),
             ),
-            SizedBox(
-              width: 250.0,
-              child: DefaultTextStyle(
-                style: TextStyle(fontSize: 15.sp, color: Colors.white),
-                child: AnimatedTextKit(
-                  repeatForever: true,
-                  animatedTexts: [
-                    TypewriterAnimatedText('',
-                        speed: const Duration(milliseconds: 800)),
-                  ],
+            Padding(
+              padding: EdgeInsets.only(left: 85.w),
+              child: SizedBox(
+                width: 250.0.w,
+                child: DefaultTextStyle(
+                  style: TextStyle(
+                      fontSize: 7.sp,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400),
+                  child: AnimatedTextKit(
+                    repeatForever: true,
+                    animatedTexts: [
+                      TypewriterAnimatedText('I Enjoy Coding',
+                          speed: const Duration(milliseconds: 150)),
+                      TypewriterAnimatedText("I'm Mobile Developer",
+                          speed: const Duration(milliseconds: 150)),
+                      TypewriterAnimatedText("I Love Developing",
+                          speed: const Duration(milliseconds: 150)),
+                    ],
+                  ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ],
@@ -191,7 +201,7 @@ class _SidebarPageState extends State<SidebarPage> {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: Color.fromARGB(255, 255, 255, 255),
+      color: const Color.fromARGB(255, 255, 255, 255),
       child: Center(
         child: Text(
           _headline,
