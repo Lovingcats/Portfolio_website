@@ -1,9 +1,8 @@
-import 'dart:math' as math show pi;
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:morphing_text/morphing_text.dart';
 
 void main() => runApp(const MyApp());
 
