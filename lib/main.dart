@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         designSize: const Size(400, 900),
         builder: (BuildContext context, Widget? child) => const MaterialApp(
               debugShowCheckedModeBanner: false,
-              title: '안녕하세요! 신입 모바일 개발자 조용제입니다',
+              title: '안녕하세요! 신입 모바일 개발자 멍청이입니다',
               home: Scaffold(
                 body: SidebarPage(),
               ),
