@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         designSize: const Size(400, 900),
         builder: (BuildContext context, Widget? child) => const MaterialApp(
               debugShowCheckedModeBanner: false,
-              title: '안녕하세요! 신입 모바일 개발자 멍청이입니다',
+              title: '안녕하세요! 신입 모바일 개발자 조용제입니다',
               home: Scaffold(
                 body: SidebarPage(),
               ),
@@ -88,7 +88,7 @@ class _SidebarPageState extends State<SidebarPage> {
               opacity: index == 2 ? 1 : 0,
               duration: const Duration(milliseconds: 700),
               child: _aboutbody(size, context),
-            )
+            ),
           ],
         ),
         backgroundColor: Colors.black,
@@ -168,18 +168,70 @@ class _SidebarPageState extends State<SidebarPage> {
   }
 
   Widget _aboutbody(Size size, BuildContext context) {
-    return Container(
-      height: double.infinity,
-      width: double.infinity,
-      color: const Color.fromARGB(255, 255, 255, 255),
-      child: Center(
-        child: Text(
-          _headline,
-          style: Theme.of(context).textTheme.headline2,
-          overflow: TextOverflow.visible,
-          softWrap: false,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: 60.w, top: 40.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                "About Me",
+                style: TextStyle(
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
+            ],
+          ),
         ),
-      ),
+        Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 60.w, top: 100.h),
+              child: SizedBox(
+                height: 520.h,
+                width: 90.w,
+                child: Image.asset(
+                  "images/profile.png",
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Mobile Developer",
+                  style: TextStyle(
+                      fontSize: 8.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500),
+                ),
+                Text(
+                  "\n안녕하세요! Flutter를 배우고 있는 신입 개발자입니다.\n\nFlutter를 선택한 이유는 뛰어난 크로스 플랫폼 개발 능력과 빠른 개발 속도 때문입니다. ",
+                  style: TextStyle(
+                      fontSize: 4.5.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w200),
+                ),
+                Text(
+                  "Flutter를 배우며 앱 개발에 대한 열정과 자신감을 가지게 되었습니다.\n새로운 기술을 배우는 것을 즐기는 개발자가 되고 싶습니다.",
+                  style: TextStyle(
+                      fontSize: 4.5.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w200),
+                )
+              ],
+            )
+          ],
+        )
+      ],
     );
   }
 
