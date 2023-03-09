@@ -85,6 +85,10 @@ flutter:
   assets:
     - images/profile.png
     - images/coding.jpg
+    - images/github.png
+    - images/facebook.png
+    - images/discord.png
+    - images/instagram.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
