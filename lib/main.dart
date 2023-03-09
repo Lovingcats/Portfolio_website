@@ -171,25 +171,10 @@ class _SidebarPageState extends State<SidebarPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Padding(
-          padding: EdgeInsets.only(left: 60.w, top: 40.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                "About Me",
-                style: TextStyle(
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ),
-            ],
-          ),
-        ),
         Row(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 60.w, top: 100.h),
+              padding: EdgeInsets.only(left: 60.w, top: 140.h),
               child: SizedBox(
                 height: 520.h,
                 width: 90.w,
@@ -207,14 +192,24 @@ class _SidebarPageState extends State<SidebarPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
+                  "About Me",
+                  style: TextStyle(
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+                SizedBox(
+                  height: 0.5.h,
+                ),
+                Text(
                   "Mobile Developer",
                   style: TextStyle(
-                      fontSize: 8.sp,
+                      fontSize: 7.sp,
                       color: Colors.black,
                       fontWeight: FontWeight.w500),
                 ),
                 Text(
-                  "\n안녕하세요! Flutter를 배우고 있는 신입 개발자입니다.\n\nFlutter를 선택한 이유는 뛰어난 크로스 플랫폼 개발 능력과 빠른 개발 속도 때문입니다. ",
+                  "\n안녕하세요! Flutter를 배우고 있는 신입 개발자 조용제입니다.\n\nFlutter를 선택한 이유는 뛰어난 크로스 플랫폼 개발 능력과 빠른 개발 속도 때문입니다. ",
                   style: TextStyle(
                       fontSize: 4.5.sp,
                       color: Colors.black,
@@ -226,6 +221,43 @@ class _SidebarPageState extends State<SidebarPage> {
                       fontSize: 4.5.sp,
                       color: Colors.black,
                       fontWeight: FontWeight.w200),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: 5.w,
+                      height: 20.h,
+                      child: Image.asset(
+                        "images/instagram.png",
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                      height: 20.h,
+                      child: Image.asset(
+                        "images/facebook.png",
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                      height: 20.h,
+                      child: Image.asset(
+                        "images/github.png",
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                      height: 20.h,
+                      child: Image.asset(
+                        "images/discord.png",
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ],
                 )
               ],
             )
