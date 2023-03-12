@@ -93,10 +93,10 @@ class _SidebarPageState extends State<SidebarPage> {
         ),
         backgroundColor: Colors.black,
         selectedTextColor: Colors.limeAccent,
-        textStyle: const TextStyle(fontSize: 15),
-        titleStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        textStyle: TextStyle(fontSize: 4.sp),
+        titleStyle: TextStyle(fontSize: 6.sp, fontWeight: FontWeight.bold),
         toggleTitleStyle:
-            const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            TextStyle(fontSize: 6.sp, fontWeight: FontWeight.bold),
       ),
     );
   }
