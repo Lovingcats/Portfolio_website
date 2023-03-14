@@ -3,6 +3,7 @@ import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:morphing_text/morphing_text.dart';
+import 'package:my_website/common/common.dart';
 
 void main() => runApp(const MyApp());
 
@@ -181,7 +182,7 @@ class _SidebarPageState extends State<SidebarPage> {
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 0.8.w,
-                    color: const Color(0xff51BFF0),
+                    color: CommonColor.flutterColor,
                   ),
                 ),
                 child: Image.asset(
@@ -199,45 +200,48 @@ class _SidebarPageState extends State<SidebarPage> {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                      Text(
-                  "About ",
-                  style: TextStyle(
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
-                ),
-                Text(
-                  "About ",
-                  style: TextStyle(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
-                      color: ),
-                ),
+                    Text(
+                      "About ",
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 3.h),
+                      child: Text(
+                        "Me",
+                        style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: CommonColor.flutterColor),
+                      ),
+                    ),
                   ],
                 ),
-                
                 SizedBox(
                   height: 0.5.h,
                 ),
                 Text(
                   "Mobile Developer",
                   style: TextStyle(
-                      fontSize: 7.sp,
+                      fontSize: 6.5.sp,
                       color: Colors.black,
                       fontWeight: FontWeight.w500),
                 ),
                 Text(
                   "\n안녕하세요! Flutter를 배우고 있는 신입 개발자 조용제입니다.\n\nFlutter를 선택한 이유는 뛰어난 크로스 플랫폼 개발 능력과 빠른 개발 속도 때문입니다. ",
                   style: TextStyle(
-                      fontSize: 4.5.sp,
+                      fontSize: 4.sp,
                       color: Colors.black,
                       fontWeight: FontWeight.w200),
                 ),
                 Text(
                   "Flutter를 배우며 앱 개발에 대한 열정과 자신감을 가지게 되었습니다.\n새로운 기술을 배우는 것을 즐기는 개발자가 되고 싶습니다.",
                   style: TextStyle(
-                      fontSize: 4.5.sp,
+                      fontSize: 4.sp,
                       color: Colors.black,
                       fontWeight: FontWeight.w200),
                 ),
@@ -245,51 +249,206 @@ class _SidebarPageState extends State<SidebarPage> {
                   height: 20.h,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      width: 10.w,
-                      height: 40.h,
-                      child: Image.asset(
-                        "images/instagram.png",
-                        fit: BoxFit.fill,
-                      ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "이름",
+                              style: TextStyle(
+                                  fontSize: 5.5.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              ":",
+                              style: TextStyle(
+                                  fontSize: 4.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              "조용제",
+                              style: TextStyle(
+                                  fontSize: 4.0.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "생년월일",
+                              style: TextStyle(
+                                  fontSize: 5.5.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              ":",
+                              style: TextStyle(
+                                  fontSize: 4.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black),
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              "2005.07.29",
+                              style: TextStyle(
+                                  fontSize: 4.0.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                     SizedBox(
-                      width: 6.w,
+                      width: 20.w,
                     ),
-                    SizedBox(
-                      width: 10.w,
-                      height: 40.h,
-                      child: Image.asset(
-                        "images/facebook.png",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 6.w,
-                    ),
-                    SizedBox(
-                      width: 10.w,
-                      height: 40.h,
-                      child: Image.asset(
-                        "images/github.png",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 6.w,
-                    ),
-                    SizedBox(
-                      width: 10.w,
-                      height: 40.h,
-                      child: Image.asset(
-                        "images/discord.png",
-                        fit: BoxFit.fill,
-                      ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "E-mail",
+                              style: TextStyle(
+                                  fontSize: 5.5.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              ":",
+                              style: TextStyle(
+                                  fontSize: 4.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              "whehdrms68101@gmail.com",
+                              style: TextStyle(
+                                  fontSize: 4.0.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "주소",
+                              style: TextStyle(
+                                  fontSize: 5.5.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              ":",
+                              style: TextStyle(
+                                  fontSize: 4.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              "부산광역시 연제구",
+                              style: TextStyle(
+                                  fontSize: 4.0.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ],
-                )
+                ),
+
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     SizedBox(
+                //       width: 10.w,
+                //       height: 40.h,
+                //       child: Image.asset(
+                //         "images/instagram.png",
+                //         fit: BoxFit.fill,
+                //       ),
+                //     ),
+                //     SizedBox(
+                //       width: 6.w,
+                //     ),
+                //     SizedBox(
+                //       width: 10.w,
+                //       height: 40.h,
+                //       child: Image.asset(
+                //         "images/facebook.png",
+                //         fit: BoxFit.fill,
+                //       ),
+                //     ),
+                //     SizedBox(
+                //       width: 6.w,
+                //     ),
+                //     SizedBox(
+                //       width: 10.w,
+                //       height: 40.h,
+                //       child: Image.asset(
+                //         "images/github.png",
+                //         fit: BoxFit.fill,
+                //       ),
+                //     ),
+                //     SizedBox(
+                //       width: 6.w,
+                //     ),
+                //     SizedBox(
+                //       width: 10.w,
+                //       height: 40.h,
+                //       child: Image.asset(
+                //         "images/discord.png",
+                //         fit: BoxFit.fill,
+                //       ),
+                //     ),
+                //   ],
+                // )
               ],
             )
           ],
