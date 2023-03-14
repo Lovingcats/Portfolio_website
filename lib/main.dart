@@ -175,9 +175,15 @@ class _SidebarPageState extends State<SidebarPage> {
           children: [
             Padding(
               padding: EdgeInsets.only(left: 60.w, top: 140.h),
-              child: SizedBox(
+              child: Container(
                 height: 520.h,
                 width: 90.w,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 0.8.w,
+                    color: const Color(0xff51BFF0),
+                  ),
+                ),
                 child: Image.asset(
                   "images/profile.png",
                   fit: BoxFit.fill,
@@ -191,13 +197,26 @@ class _SidebarPageState extends State<SidebarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "About Me",
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                      Text(
+                  "About ",
                   style: TextStyle(
                       fontSize: 15.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
                 ),
+                Text(
+                  "About ",
+                  style: TextStyle(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.bold,
+                      color: ),
+                ),
+                  ],
+                ),
+                
                 SizedBox(
                   height: 0.5.h,
                 ),
@@ -222,36 +241,48 @@ class _SidebarPageState extends State<SidebarPage> {
                       color: Colors.black,
                       fontWeight: FontWeight.w200),
                 ),
+                SizedBox(
+                  height: 20.h,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      width: 5.w,
-                      height: 20.h,
+                      width: 10.w,
+                      height: 40.h,
                       child: Image.asset(
                         "images/instagram.png",
                         fit: BoxFit.fill,
                       ),
                     ),
                     SizedBox(
-                      width: 5.w,
-                      height: 20.h,
+                      width: 6.w,
+                    ),
+                    SizedBox(
+                      width: 10.w,
+                      height: 40.h,
                       child: Image.asset(
                         "images/facebook.png",
                         fit: BoxFit.fill,
                       ),
                     ),
                     SizedBox(
-                      width: 5.w,
-                      height: 20.h,
+                      width: 6.w,
+                    ),
+                    SizedBox(
+                      width: 10.w,
+                      height: 40.h,
                       child: Image.asset(
                         "images/github.png",
                         fit: BoxFit.fill,
                       ),
                     ),
                     SizedBox(
-                      width: 5.w,
-                      height: 20.h,
+                      width: 6.w,
+                    ),
+                    SizedBox(
+                      width: 10.w,
+                      height: 40.h,
                       child: Image.asset(
                         "images/discord.png",
                         fit: BoxFit.fill,
